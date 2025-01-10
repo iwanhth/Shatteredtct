@@ -1,0 +1,878 @@
+campaignTrail_temp.election_json = [
+    {
+        "model": "campaign_trail.election",
+        "pk": 20,
+        "fields": {
+            "year": 2016,
+            "display_year": "2008c",
+            "summary": "<br>\nAs the United States heads into the 2008 election, the public is divided about the nation's direction. \n<br><br>\n•  Hillary Clinton, New York Senator and former First Lady to Bill Clinton is offering a message of change and bold progress.\n<br><br>\n•  John McCain, Arizona's 'maverick' Senator and veteran of the Vietnam war takes up the Republican mantle from the unpopular President Bush.\n<br><br>\nAs an economic crash turns into a meltdown, Americans are searching from a departure from the status quo.",
+            "image_url": "https://i.imgur.com/lv6bFXP.png",
+            "winning_electoral_vote_number": 270,
+            "advisor_url": "https://i.imgur.com/LypURQd.png",
+            "recommended_reading": "<ul>\n<li><a href=https://www.chicagotribune.com/opinion/editorials/ct-edit-chicago-tribune-biden-endorsement-20200925-lnyxsb5qvrftnjjmj3rnzj33jy-story.html>Our Case For Joe Biden</a></li>\n<li><a href=https://nationalinterest.org/feature/case-trump-166808>The Case For Trump</a></li>\n<li><a href=https://www.npr.org/2020/11/18/935730100/how-biden-won-ramping-up-the-base-and-expanding-margins-in-the-suburbs>How Biden Won: Ramping Up The Base And Expanding Margins In The Suburbs</a></li>\n<li><a href=https://www.prospectmagazine.co.uk/politics/donald-trump-joe-biden-us-election-almost-win-votes-concede>Why Did Trump Almost Win?</a></li>\n<li><a href=https://www.hoover.org/research/no-evidence-voter-fraud-guide-statistical-claims-about-2020-election>No Evidence For Voter Fraud: A Guide To Statistical Claims About The 2020 Election</a></li>\n</ul>",
+            "has_visits": 1,
+            "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
+        }
+    }
+]
+
+campaignTrail_temp.temp_election_list = [
+    {
+        "id": 20,
+        "year": 2016,
+        "is_premium": 0,
+        "display_year": "2008c"
+    }
+]
+
+campaignTrail_temp.credits = "Strawbarron"
+
+campaignTrail_temp.global_parameter_json = [
+    {
+        "model": "campaign_trail.global_parameter",
+        "pk": 1,
+        "fields": {
+            "vote_variable": 1.125,
+            "max_swing": 0.12,
+            "start_point": 0.94,
+            "candidate_issue_weight": 10,
+            "running_mate_issue_weight": 3,
+            "issue_stance_1_max": -0.71,
+            "issue_stance_2_max": -0.3,
+            "issue_stance_3_max": -0.125,
+            "issue_stance_4_max": 0.125,
+            "issue_stance_5_max": 0.3,
+            "issue_stance_6_max": 0.71,
+            "global_variance": 0.01,
+            "state_variance": 0.005,
+            "question_count": 25,
+            "default_map_color_hex": "#C9C9C9",
+            "no_state_map_color_hex": "#999999"
+        }
+    }
+]
+
+campaignTrail_temp.candidate_json = [
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 200,
+        "fields": {
+            "first_name": "Hillary",
+            "last_name": "Clinton",
+            "election": 20,
+            "party": "Democrat",
+            "state": "Arkansas",
+            "priority": 1,
+            "description": "<p>Behind her mile wide smile, Hillary Clinton is all relentless ambition, at once inspired by and resentful of the men who have always stood in her way. She did not charm Arkansas like Bill. She was not forgiven for her failures the way he was. Her time in the White House did not make her beloved. Instead of winning on warmth or charisma, Hillary has been carried along by sheer force of will, policy expertise, and a marriage that has survived more than anyone thought possible. Still, she believes she’s owed something. She believes in the promise that grit, fierce loyalty, and dog headed perseverance will finally pay off.<br>She needs to believe this. She desperately needs to believe that she wasn’t just another loyal soldier of the Democratic machine, another competent woman cleaning up after reckless men. She cannot just be Bill’s wife, riding his coattails to relevance. She will prove everyone wrong by showing that you don’t need to be likable to win. She will outshine her husband—even if she has to bulldoze the world to do it.</p>",
+            "color_hex": "#0000FF",
+            "secondary_color_hex": null,
+            "is_active": 1,
+            "image_url": "https://i.imgur.com/0VJRjRq.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 204,
+        "fields": {
+            "first_name": "Evan",
+            "last_name": "Bayh",
+            "election": 20,
+            "party": "Democrat",
+            "state": "Indiana",
+            "priority": 1,
+            "description_as_running_mate": "<p>Evan Bayh is the Junior Senator from Indiana, son of the prominent Birch Bayh. A former governor with a reputation for caution and centrism, Bayh supported capital punishment and co-sponsored the Iraq War resolution, positions that have made him a divisive figure within the Democratic base. While Hillary Clinton sees him as a safe, stabilizing choice to balance the ticket, critics argue that he represents the party’s worst instincts toward bland, uninspired centrism. Popular in his home state, Bayh may help secure Indiana—but at what cost to the broader coalition?</p>",
+            "color_hex": "#0000FF",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://i.imgur.com/SMpQa1n.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description": "<p>This is a running mate description it only shows for running mates</p>",
+            "candidate_score": 1,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 201,
+        "fields": {
+            "first_name": "John",
+            "last_name": "McCain",
+            "election": 20,
+            "party": "Republican Party",
+            "state": "Arizona",
+            "priority": 1,
+            "description": "<p><b>NOT PLAYABLE. FOR CONTEXT ONLY.</b></p>",
+            "color_hex": "#ff0000",
+            "secondary_color_hex": null,
+            "is_active": 1,
+            "image_url": "https://i.imgur.com/euyM1U2.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 50001,
+        "fields": {
+            "first_name": "Sarah",
+            "last_name": "Palin",
+            "election": 20,
+            "party": "Republican",
+            "state": "Alaska",
+            "priority": 1,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#ff0000",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://i.imgur.com/LPAYJ2a.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 202,
+        "fields": {
+            "first_name": "Ralph",
+            "last_name": "Nader",
+            "election": 20,
+            "party": "Turbo Team",
+            "state": "Idaho",
+            "priority": 1,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#1d981b",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 203,
+        "fields": {
+            "first_name": "Bob",
+            "last_name": "Barr",
+            "election": 20,
+            "party": "Turbo Team",
+            "state": "Idaho",
+            "priority": 1,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#ffbf00",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+    "model": "campaign_trail.candidate",
+    "pk": 7002,
+    "fields": {
+        "first_name": "Wesley",
+        "last_name": "Clark",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Arkansas",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Wesley_Clark_at_US_State_Department_November_2011.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7003,
+    "fields": {
+        "first_name": "Russ",
+        "last_name": "Feingold",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Wisconsin",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Russ_Feingold.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7004,
+    "fields": {
+        "first_name": "Kathleen",
+        "last_name": "Sebelius",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Kansas",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Kathleen_Sebelius_official_portrait.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7005,
+    "fields": {
+        "first_name": "Sherrod",
+        "last_name": "Brown",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Ohio",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Sherrod_Brown_official_portrait%2C_114th_Congress.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7006,
+    "fields": {
+        "first_name": "Bill",
+        "last_name": "Richardson",
+        "election": 20,
+        "party": "Democrat",
+        "state": "New Mexico",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Bill_Richardson_DNCC_2008.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7007,
+    "fields": {
+        "first_name": "Janet",
+        "last_name": "Napolitano",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Arizona",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Janet_Napolitano_official_portrait.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7008,
+    "fields": {
+        "first_name": "Jim",
+        "last_name": "Webb",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Virginia",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Jim_Webb_2007_official_photo.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7017,
+    "fields": {
+        "first_name": "Colin",
+        "last_name": "Powell",
+        "election": 20,
+        "party": "Independent",
+        "state": "Virginia",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Colin_Powell_official_Secretary_of_State_photo.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7009,
+    "fields": {
+        "first_name": "Mark",
+        "last_name": "Warner",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Virginia",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Mark_Warner%2C_official_portrait%2C_113th_Congress.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7010,
+    "fields": {
+        "first_name": "Deval",
+        "last_name": "Patrick",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Massachusetts",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Deval_Patrick_official_photo.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7011,
+    "fields": {
+        "first_name": "Claire",
+        "last_name": "McCaskill",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Missouri",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Claire_McCaskill%2C_official_portrait%2C_112th_Congress.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7012,
+    "fields": {
+        "first_name": "Joe",
+        "last_name": "Biden",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Delaware",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Joe_Biden_official_portrait_2008_crop.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7013,
+    "fields": {
+        "first_name": "Sam",
+        "last_name": "Nunn",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Georgia",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Sam_Nunn.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7014,
+    "fields": {
+        "first_name": "Al",
+        "last_name": "Gore",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Tennessee",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Al_Gore_2000.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7015,
+    "fields": {
+        "first_name": "Ted",
+        "last_name": "Strickland",
+        "election": 20,
+        "party": "Democrat",
+        "state": "Ohio",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Ted_Strickland_official_photo.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7016,
+    "fields": {
+        "first_name": "Michael",
+        "last_name": "Bloomberg",
+        "election": 20,
+        "party": "Independent",
+        "state": "New York",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Michael_Bloomberg_2007.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+},
+{
+    "model": "campaign_trail.candidate",
+    "pk": 7017,
+    "fields": {
+        "first_name": "Colin",
+        "last_name": "Powell",
+        "election": 20,
+        "party": "Independent",
+        "state": "Virginia",
+        "priority": 1,
+        "description": "<p><strong>Unavailable in first release.</strong></p>",
+        "color_hex": "#0000FF",
+        "secondary_color_hex": null,
+        "is_active": 0,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Colin_Powell_official_Secretary_of_State_photo.jpg",
+        "electoral_victory_message": "This guy wins!",
+        "electoral_loss_message": "This guy loses!",
+        "no_electoral_majority_message": "We all win?",
+        "description_as_running_mate": "<p><strong>Unavailable in first release.</strong></p>",
+        "candidate_score": 1,
+        "running_mate": true
+    }
+}
+
+
+]
+
+campaignTrail_temp.running_mate_json = [
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 100226,
+        "fields": {
+            "candidate": 200,
+            "running_mate": 204
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 136728,
+        "fields": {
+            "candidate": 201,
+            "running_mate": 50001
+        }
+    },
+    {
+    "model": "campaign_trail.running_mate",
+    "pk": 100227,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7002
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100228,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7003
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100229,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7004
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100230,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7005
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100231,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7006
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100232,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7007
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100233,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7008
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100234,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7009
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100235,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7010
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100236,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7011
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100237,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7012
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100238,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7013
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100239,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7014
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100240,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7015
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100241,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7016
+    }
+},
+{
+    "model": "campaign_trail.running_mate",
+    "pk": 100242,
+    "fields": {
+        "candidate": 200,
+        "running_mate": 7017
+    }
+}
+
+
+]
+
+campaignTrail_temp.opponents_default_json = [
+    {
+        "election": 20,
+        "candidates": [
+            200,
+            201,
+            202,
+            203
+        ]
+    }
+]
+
+campaignTrail_temp.opponents_weighted_json = [
+    {
+        "election": 20,
+        "candidates": [
+            200,
+            201,
+            202,
+            203
+        ]
+    }
+]
+
+jet_data = {
+    "headerColor": "#700016",
+    "windowColor": "#BFE6FF",
+    "containerColor": "#FFFFFF",
+    "innerWindowColor": "#E8FBFF",
+    "bannerImageUrl": "https://i.imgur.com/pS9UQbm.png",
+    "backgroundImageUrl": "https://theintercept.com/wp-content/uploads/2016/06/GettyImages-81488227.jpg",
+    "endingTextColor": "#000000",
+    "customQuote": "\"Read My Lips: Kiss. My. Ass\" - George HW Bush"
+}
+
+//#startcode
+
+
+corrr = '\n              <h2>THE CAMPAIGN TRAIL</h2><font id="wittyquote" size="4" color="white"><em>"Read My Lips: Kiss. My. Ass" - George HW Bush</em></font>\n            ';
+
+
+
+document.body.style = `
+  background: url('https://theintercept.com/wp-content/uploads/2016/06/GettyImages-81488227.jpg');
+  background-size: cover;
+  background-position: 150px -50px;
+  transform: rotate(0.2deg);
+  animation: slowRotate 600s infinite linear; 
+  animation-delay: 120s; 
+  height: 100vh;
+  width: 100vw;
+`;
+
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes slowRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(36deg); /* 36 degrees over 600s = 0.1 degree/second */
+    }
+  }
+`;
+document.head.appendChild(style);
+
+
+
+document.getElementById("header").src = "https://i.imgur.com/pS9UQbm.png";
+
+
+// Hide unnecessary UI elements
+$("#music_player")[0].children[0].style.display = "none";
+$("#music_player")[0].children[1].style.display = "none";
+document.getElementById("modLoadReveal").style.display = "none";
+document.getElementById("modloaddiv").style.display = "none";
+
+let musicBox = document.getElementById("music_player");
+musicBox.style.display = "";
+
+// Track list and settings
+e = campaignTrail_temp;
+e.selectedSoundtrack = 0;
+
+// Create and display the play button
+function createPlayButton() {
+  let playButton = document.getElementById("play-button");
+  if (!playButton) {
+    playButton = document.createElement("button");
+    playButton.id = "play-button";
+    playButton.innerHTML = "🎵";  // Always display the same music note symbol
+    musicBox.appendChild(playButton);
+  }
+  return playButton;
+}
+
+// Function to set up the music player
+function newMusicPlayer() {
+  // Create the play button
+  let playButton = createPlayButton();
+
+  // Initialize the audio element
+  let audio = document.createElement("audio");
+  audio.id = "campaigntrailmusic";
+  audio.src = "https://audio.jukehost.co.uk/J4gSiRMnnnJa9OK0PCUL6oMPHaBirK8E";
+  audio.loop = false;  // Do not loop the track
+  audio.volume = 0.1;  // Start at 10% volume
+  document.body.appendChild(audio);
+
+  let isPlaying = false;
+
+  // Button click event
+  playButton.addEventListener("click", () => {
+    if (!isPlaying) {
+      // Start playing if not already playing
+      audio.play();
+      isPlaying = true;
+    } else {
+      // Increase the volume instead of stopping
+      if (audio.volume < 1.0) {
+        audio.volume = Math.min(audio.volume + 0.1, 1.0);  // Increase volume up to 100%
+      } else {
+        alert("if you see this please post on the reddit pls");  // 
+      }
+    }
+  });
+
+  // Reset the volume when the audio ends
+  audio.addEventListener("ended", () => {
+    audio.volume = 0.1;  // Reset the volume to 10% when the song ends
+    isPlaying = false;  // Reset play state
+  });
+}
+
+// Call the function to set up the music player
+newMusicPlayer();
+
+
+
+
+//#endcode
