@@ -9,12 +9,22 @@ campaignTrail_temp.election_json = [
             "image_url": "https://i.imgur.com/lv6bFXP.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "https://i.imgur.com/LypURQd.png",
-            "recommended_reading": "<ul>\n<li><a href=https://www.chicagotribune.com/opinion/editorials/ct-edit-chicago-tribune-biden-endorsement-20200925-lnyxsb5qvrftnjjmj3rnzj33jy-story.html>Our Case For Joe Biden</a></li>\n<li><a href=https://nationalinterest.org/feature/case-trump-166808>The Case For Trump</a></li>\n<li><a href=https://www.npr.org/2020/11/18/935730100/how-biden-won-ramping-up-the-base-and-expanding-margins-in-the-suburbs>How Biden Won: Ramping Up The Base And Expanding Margins In The Suburbs</a></li>\n<li><a href=https://www.prospectmagazine.co.uk/politics/donald-trump-joe-biden-us-election-almost-win-votes-concede>Why Did Trump Almost Win?</a></li>\n<li><a href=https://www.hoover.org/research/no-evidence-voter-fraud-guide-statistical-claims-about-2020-election>No Evidence For Voter Fraud: A Guide To Statistical Claims About The 2020 Election</a></li>\n</ul>",
+            "recommended_reading": `
+                <div style="text-align: center;">
+                    <h3 style="font-weight: bold; margin-bottom: 20px;">Coming Very Soon: Shattered 2012 by Thatchmaster</h3>
+                    <img src='https://i.imgur.com/D1zSndj.png' style='max-width: 100%; height: auto; display: block; margin: 0 auto;' alt='Recommended Reading'>
+                </div>
+            `,
             "has_visits": 1,
             "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
         }
     }
 ]
+
+document.styleSheets[0].insertRule("#main_content_area_reading { overflow: auto !important; }", 0);
+document.styleSheets[0].insertRule("#main_content_area_reading h3.results_tab_header  { height: 0%; font-size: 0%; !important; opacity: 0.0; !important;}", 0);
+document.styleSheets[0].insertRule("#main_content_area_reading p  { height: 0%; font-size: 0%; !important; }", 0); 
+document.styleSheets[0].insertRule("#results_container { overflow: auto !important; }", 0);
 
 campaignTrail_temp.temp_election_list = [
     {
@@ -52,6 +62,9 @@ campaignTrail_temp.global_parameter_json = [
     }
 ]
 
+HistHexcolour=["#0000FF","#ff0000","#1d981b","#ffbf00"]; HistName=[" Hillary Clinton"," John McCain", "Ralph Nader", " Bob Barr"]; HistEV=[372,166,0,0]; HistPV=["69,941,088","58,924,063","1,265,831","784,577"]; HistPVP=["53.3%","44.9%","1.0%"," 0.6%"];
+
+
 campaignTrail_temp.candidate_json = [
     {
         "model": "campaign_trail.candidate",
@@ -68,9 +81,24 @@ campaignTrail_temp.candidate_json = [
             "secondary_color_hex": null,
             "is_active": 1,
             "image_url": "https://i.imgur.com/0VJRjRq.png",
-            "electoral_victory_message": "This guy wins!",
-            "electoral_loss_message": "This guy loses!",
-            "no_electoral_majority_message": "We all win?",
+            "electoral_victory_message": `
+                <div style="position: relative;">
+                    <h3 style="font-weight: bold; margin-bottom: 10px;">Coming Very Soon: Shattered 2012 by Thatchmaster</h3>
+                    <img src='https://i.imgur.com/fOKup2J.png' style='max-width: 70%; height: auto; display: block; margin: 0 auto;' alt='Recommended Reading'>
+                </div>
+            `,
+            "electoral_loss_message": `
+                <div style="text-align: center;">
+                    <h3 style="font-weight: bold; margin-bottom: 10px;">Coming Very Soon: Shattered 2012 by Thatchmaster</h3>
+                    <img src='https://i.imgur.com/ABB1LvU.png' style='max-width: 70%; height: auto; display: block; margin: 0 auto;' alt='Recommended Reading'>
+                </div>
+            `,
+            "no_electoral_majority_message": `
+                <div style="text-align: center;">
+                    <h3 style="font-weight: bold; margin-bottom: 10px;">Coming Very Soon: Shattered 2012 by Thatchmaster</h3>
+                    <img src='https://i.imgur.com/UjpJnsp.png' style='max-width: 70%; height: auto; display: block; margin: 0 auto;' alt='Recommended Reading'>
+                </div>
+            `,
             "description_as_running_mate": null,
             "candidate_score": 1,
             "running_mate": false
@@ -771,7 +799,7 @@ jet_data = {
 }
 
 //#startcode
-
+RecReading=true
 
 corrr = '\n              <h2>THE CAMPAIGN TRAIL</h2><font id="wittyquote" size="4" color="white"><em>"Read My Lips: Kiss. My. Ass" - George HW Bush</em></font>\n            ';
 
@@ -781,25 +809,11 @@ document.body.style = `
   background: url('https://theintercept.com/wp-content/uploads/2016/06/GettyImages-81488227.jpg');
   background-size: cover;
   background-position: 150px -50px;
-  transform: rotate(0.2deg);
-  animation: slowRotate 600s infinite linear; 
-  animation-delay: 120s; 
+  transform: rotate(0.2deg); /* Apply the 0.2-degree angle */
   height: 100vh;
   width: 100vw;
 `;
 
-const style = document.createElement('style');
-style.innerHTML = `
-  @keyframes slowRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(36deg); /* 36 degrees over 600s = 0.1 degree/second */
-    }
-  }
-`;
-document.head.appendChild(style);
 
 
 
