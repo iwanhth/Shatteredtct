@@ -9137,10 +9137,9 @@ campaignTrail_temp.jet_data = [{
 }
 ]
 
-
-
 e.cyoa = true
 e.noCounter = 0
+e.answer_count = 5;
 
 
 campaignTrail_temp.candidate_image_url = "https://i.imgur.com/fnIclhg.png";
@@ -9168,12 +9167,301 @@ document.head.appendChild(style_overwrite);
 cyoAdventure = function(a) {
     ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length-1];
     e.noCounter += 1
+    
 
     //VP Pick
     if (e.noCounter == 4)  { 
         campaignTrail_temp.election_json[0]["fields"].advisor_url = "oops its broken";
     }
 
+    if (e.noCounter == 10)  { 
+        campaignTrail_temp.candidate_last_name = "Clifton";
+    }
 
+    if (e.noCounter === 23 || e.noCounter === 24) {
+        updateCampaignSignStyle(e.noCounter);
+    }
+
+    if (e.noCounter == 23)  { 
+        campaignTrail_temp.candidate_image_url = "https://i.imgur.com/xfISWsF.png";
+        campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/MsRTWGI.png";
+        campaignTrail_temp.candidate_last_name = "Trump";
+        campaignTrail_temp.running_mate_last_name = "Obama";
+        var id = e.candidate_json.map(p=>p.pk).indexOf(200)
+         e.candidate_json[id].fields.last_name = "Trump"
+    }
+
+    if (e.noCounter == 24)  { 
+        campaignTrail_temp.candidate_image_url = "https://i.imgur.com/fnIclhg.png";
+        campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/76nq6Tv.png";
+        campaignTrail_temp.candidate_last_name = "Clinton";
+        campaignTrail_temp.running_mate_last_name = "Bayh";
+                var id = e.candidate_json.map(p=>p.pk).indexOf(200)
+         e.candidate_json[id].fields.last_name = "Clinton"
+    }
 
 }
+
+function updateCampaignSignStyle(counter) {
+    // Remove any existing custom style if present
+    const existingStyle = document.querySelector("#style-overwrite");
+    if (existingStyle) {
+        existingStyle.remove();
+    }
+
+    // Apply styles for specific counters
+    if (counter === 24) { // Change the style for counter 25
+        const styleOverwrite = document.createElement("style");
+        styleOverwrite.id = "style-overwrite"; // Add an ID to keep track of it
+        styleOverwrite.innerHTML = 
+        `#campaign_sign {
+          background-color: #0033A0; 
+          color: white; 
+          border-color: #ffffff; 
+          border-style: solid;
+          font-family: 'Helvetica', sans-serif; 
+          text-align: center;
+          padding: 20px;
+        }`;
+        document.head.appendChild(styleOverwrite);
+    } else if (counter === 23) { // Revert to original style for counter 24
+        const styleRevert = document.createElement("style");
+        styleRevert.id = "style-overwrite";
+        styleRevert.innerHTML = 
+        `#campaign_sign {
+            background-color: #0000D1;
+            border-style: solid;
+            border-width: .5em;
+            border-color: #700016;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0px;
+        }`;
+        document.head.appendChild(styleRevert);
+    }
+}
+
+let observerRunning = false;
+let changeChartRunning = false;
+let mcaHeightRunning = false;
+let processedNodes = new Set();
+
+async function handleMutations(mutationsList, observer) {
+    if (observerRunning) return;
+    observerRunning = true;
+
+
+
+    // stop observing
+    observer.disconnect();
+
+    // addScrollbar
+    const overallResult = document.getElementById('overall_result');
+    if (overallResult && !processedNodes.has(overallResult)) {
+        overallResult.style.overflow = 'auto';
+        const buttons = document.querySelectorAll('#view_electoral_map, #answer_select_button, #ok_button, #final_election_map_button');
+        const handleClick = () => {
+            overallResult.style.overflow = 'auto';
+        };
+        buttons.forEach(button => button.addEventListener('click', handleClick));
+        processedNodes.add(overallResult);a
+    }
+
+    // changechart
+    if (!changeChartRunning) {
+        changeChartRunning = true;
+        const elementIDs = ["overall_vote_statistics", "state_result_data_summary", "overall_details_container"];
+        for(let id of elementIDs) {
+            let element = document.getElementById(id);
+            if (element && !processedNodes.has(element)) {
+                let overallthing = element.innerHTML;
+                overallthing = overallthing.replace("Electoral Votes","Allocated Seats");
+                overallthing = overallthing.replace("Candidate","Party List");
+                element.innerHTML = overallthing;
+                processedNodes.add(element);
+            }
+        }
+        changeChartRunning = false;
+    }
+ // mcaHeight
+    if (!mcaHeightRunning) {
+        mcaHeightRunning = true;
+        let results_container = document.getElementById("results_container");
+        let chart = document.getElementById("myChart");
+        if (results_container && !processedNodes.has(results_container)) {
+            if (!chart){
+                results_container.style.height = "98%";
+                results_container.style.overflow = "scroll";
+            } else {
+                let mca = document.getElementById("main_content_area");
+                if (mca) {
+                    mca.style.height = "80%";
+                }
+            }
+            processedNodes.add(results_container);
+        }
+        mcaHeightRunning = false;
+    }
+
+    // Resume observing
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    observerRunning = false;
+}
+
+let singleObserver = new MutationObserver(handleMutations);
+singleObserver.observe(document.documentElement, { childList: true, subtree: true });
+
+// constructs endings based on header and pages
+construct = (a = 1) => {
+	
+    e.page = e.page + a < e.pages.length ? e.page + a : 0
+    let html = e.header;
+    html += e.pages[e.page] + "<br>";
+    if (e.page > 0) {
+    
+    html += `<button onclick='endingConstructor(a = -1)'>Back</button>`
+    }
+    if (e.page < e.pages.length - 1) {
+    
+    html += `<button onclick='endingConstructor(a = 1)'>Next</button>`
+    }
+    
+    for (i in e.executable) {
+    if (e.executable[i][0] == e.page) {
+        e.executable[i][1]();
+        
+    }
+    }
+   
+    if (e.image == true) {
+        setTimeout(() => {
+          candImg = $(".person_image")[0];
+          if (candImg) {
+            candImg.remove();
+            console.log("TRYING");
+            $("#final_results_description")[0].style = `
+              text-align:left;
+              width: 72%;
+              height: auto;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              overflow: auto;
+              color: white;
+            `;
+            console.log("RESULTS UPDATED");
+          }
+        }, 10);
+      } else if (e.image) {
+        setTimeout(() => {
+          candImg = $(".person_image")[0];
+          if (candImg) {
+            candImg.src = e.image;
+            console.log("TRYING");
+            $("#final_results_description")[0].style = `
+              text-align:left;
+              width: 72%;
+              height: auto;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              overflow: auto;
+              color: white;
+            `;
+            candImg.style = `
+              float: none;
+              height: 450px; /* Fixed height for the person image */
+              width: auto;   /* Adjust width automatically to preserve aspect ratio */
+            `;
+            console.log("RESULTS UPDATED");
+          }
+        }, 10);
+      }
+      
+
+    const resultsDescriptionElement = document.getElementById('final_results_description');
+    if (resultsDescriptionElement) {
+        resultsDescriptionElement.scrollTop = 0;
+    }
+
+    
+    return html;
+    }
+
+   
+    
+
+
+    endingConstructor = (a = 1) => {
+        $("#final_results_description")[0].innerHTML = construct(a);
+    }
+
+    // ENDINGS -- this is slightly more reliable than the ending code method
+
+    e.multiple_endings = true;
+
+    e.header = "<h1>error</h1>";
+    e.pages = ["<p>This is an error handler</p>"];
+    e.page = 0;
+
+
+    endingPicker = (out, totv, aa, quickstats) => {
+
+        
+            orderID = [aa[0].candidate, aa[1].candidate, aa[2].candidate, aa[3].candidate];
+            e.pages = [];
+            e.header = "";
+            e.executable = [];
+            nct_stuff.themes[nct_stuff.selectedTheme].text_col = "black";
+        
+
+
+        if (quickstats[0] > 269) { // Win 
+            e.pages.push(`
+            <h3 style="text-align: center; color: black;">
+                <span style="font-size: 24px; text-decoration: underline;">Coming Very Soon:Shattered 2012 by Thatchmaster</span>
+            </h3>
+            <p style="font-size: 8px; color: black;">*not a cyoa</p>
+            <p>
+            <img src='https://i.imgur.com/8Iai2aP.png' style='max-width: 100%; height: auto; display: block; margin: 0 auto;'>
+            </p>
+            <p>
+            <img src='https://i.imgur.com/FzV5jRc.png' style='max-width: 100%; height: auto; display: block; margin: 0 auto;'>
+            </p>
+            `);
+            e.executable.push([0, (() => {e.image = 'https://i.imgur.com/fOKup2J.png'})]);
+        }
+        if (quickstats[0] == 269) { // Win 
+        e.pages.push(`
+        <h3 style="text-align: center; color: black;">
+            <span style="font-size: 24px; text-decoration: underline;">Coming Very Soon:Shattered 2012 by Thatchmaster</span>
+        </h3>
+        <p style="font-size: 8px; color: black;">*not a cyoa</p>
+        <p>
+        <img src='https://i.imgur.com/SnGVT5u.png' style='max-width: 100%; height: auto; display: block; margin: 0 auto;'>
+        </p>
+        <p>
+        <img src='https://i.imgur.com/IENeGGA.png' style='max-width: 100%; height: auto; display: block; margin: 0 auto;'>
+        </p>
+        `);
+        e.executable.push([0, (() => {e.image = 'https://i.imgur.com/UjpJnsp.png'})]);
+        }
+        if (quickstats[0] < 269) { // Win 
+        e.pages.push(`
+        <h3 style="text-align: center; color: black;">
+            <span style="font-size: 24px; text-decoration: underline;">Coming Very Soon:Shattered 2012 by Thatchmaster</span>
+        </h3>
+        <p style="font-size: 8px; color: black;">*not a cyoa</p>
+        <p>
+        <img src='https://i.imgur.com/k9o2H4I.png' style='max-width: 100%; height: auto; display: block; margin: 0 auto;'>
+        </p>
+        <p>
+        <img src='https://i.imgur.com/Zv9qSdb.png' style='max-width: 100%; height: auto; display: block; margin: 0 auto;'>
+        </p>
+        `);
+        e.executable.push([0, (() => {e.image = 'https://i.imgur.com/UjpJnsp.png'})]);
+    }
+    
+        return construct(0);
+    }
