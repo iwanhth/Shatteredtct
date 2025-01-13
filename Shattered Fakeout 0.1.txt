@@ -4,7 +4,7 @@ campaignTrail_temp.election_json = [
         "pk": 20,
         "fields": {
             "year": 2016,
-            "display_year": "2008c",
+            "display_year": "2008hrc",
             "summary": "<br>\nAs the United States heads into the 2008 election, the public is divided about the nation's direction. \n<br><br>\n•  Hillary Clinton, New York Senator and former First Lady to Bill Clinton is offering a message of change and bold progress.\n<br><br>\n•  John McCain, Arizona's 'maverick' Senator and veteran of the Vietnam war takes up the Republican mantle from the unpopular President Bush.\n<br><br>\nAs an economic crash turns into a meltdown, Americans are searching from a departure from the status quo.",
             "image_url": "https://i.imgur.com/lv6bFXP.png",
             "winning_electoral_vote_number": 270,
@@ -31,7 +31,7 @@ campaignTrail_temp.temp_election_list = [
         "id": 20,
         "year": 2016,
         "is_premium": 0,
-        "display_year": "2008c"
+        "display_year": "2008hrc"
     }
 ]
 
